@@ -1,0 +1,23 @@
+#containerHome {
+    display: flex;
+    flex-flow: row;
+}
+#form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 40%;
+    margin: 20px 5% ;
+    background-color: bisque;    
+}
+.inputs {
+    margin-bottom: 20px;
+}
+#newUser {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: bisque;
+    width: 40%;
+    margin: 20px 5% ;
+}
