@@ -1,0 +1,17 @@
+#containerError{
+    margin: 0px;
+    padding: 0px;
+    background: black;
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+#titleError{
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+#imageError{
+    height: 400px;
+    width: 400px;
+}

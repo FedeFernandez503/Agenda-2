@@ -5,6 +5,7 @@ import { useNavigate } from "react-router"
 
 const Register = ({ setUser }) => {
 	const [inputsValues, setInputsValues] = useState({
+		image: "",
 		name: "",
 		lastname: "",
 		phone: "",
@@ -14,7 +15,7 @@ const Register = ({ setUser }) => {
 	const [mensaje, setMensaje] = useState(null)
 	const [loading, setLoading] = useState()
 	const navigate = useNavigate()
-	const { name, lastname, phone, address, birth } = inputsValues
+	const { name, lastname, phone, address, birth, image } = inputsValues
 	const handleInputChange = (e) => {
 		setInputsValues({ ...inputsValues, [e.target.name]: e.target.value })
 	}
@@ -36,11 +37,11 @@ const Register = ({ setUser }) => {
 				.then((user) => {
 					console.log(user)
 					setUser(user)
+					setMensaje("Usuario ingresado correctamente")
 					navigate("/contactos")
 				})
 				.catch((error) => {
 					console.error(error)
-					setMensaje("Hubo un error")
 					setLoading(false)
 				})
 		}
@@ -49,6 +50,7 @@ const Register = ({ setUser }) => {
         <div id="containerHome">
             <form id="form" onSubmit={handleSubmit}>
                 <h1 id="title">New Contact</h1>
+				<input className="inputs" id="image" name="image" placeholder="please enter your image" type="text" value={image} onChange={handleInputChange}/>
                 <input className="inputs" id="name" name="name" placeholder="please enter your name" type="text" value={name} onChange={handleInputChange}/>
                 <input className="inputs" id="lastname" name="lastname" placeholder="please enter your lastname" type="text" value={lastname} onChange={handleInputChange}/>
                 <input className="inputs" id="phone" name="phone" placeholder="please enter your phone number" type="number" value={phone} onChange={handleInputChange}/>
@@ -65,6 +67,7 @@ const Register = ({ setUser }) => {
 				</div>
 			)}
             <div id="newUser">
+				<img className="dataImage" src={image} />
                 <p className="data">{name}</p>
                 <p className="data">{lastname}</p>
                 <p className="data">{phone}</p>

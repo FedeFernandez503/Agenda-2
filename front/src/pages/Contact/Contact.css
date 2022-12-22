@@ -1,12 +1,33 @@
 #containerContact {
     display: flex;
     flex-flow: row wrap;
+    background-color: aliceblue;
+}
+#titleAgenda{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background-color: burlywood;
+    height: 50px;
 }
 .users {
     display: flex;
     flex-flow: column;
     align-items: center;
     background-color: bisque;
+    border-radius: 5%;
     width: 40%;
     margin: 20px 5% ;
 }
+.dataImage{
+    padding-top: 5px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+#footer{
+    height: 50px;
+    background-color: burlywood;
+    width: 100%;
+}
+
